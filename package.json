@@ -1,0 +1,46 @@
+{
+  "name": "grunt-svgmin",
+  "version": "0.1.0",
+  "description": "Minify SVG",
+  "keywords": [
+    "gruntplugin",
+    "svg",
+    "vector",
+    "graphic",
+    "image",
+    "optimize",
+    "minify"
+  ],
+  "homepage": "https://github.com/sindresorhus/grunt-svgmin",
+  "bugs": "https://github.com/sindresorhus/grunt-svgmin/issues",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sindresorhus/grunt-svgmin.git"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "svgo": "~0.2.3",
+    "filesize": "~1.8.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "0.4.0",
+    "grunt-simple-mocha": "~0.3.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": {
+    "type": "MIT"
+  }
+}
