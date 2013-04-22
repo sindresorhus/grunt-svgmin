@@ -36,9 +36,12 @@ See the [Gruntfile](Gruntfile.js) in this repo for a full example.
 grunt.initConfig({
 	svgmin: {											// Task
 		dist: {											// Target
-			files: {									// Dictionary of files
-				'dist/figure.svg': 'app/figure.svg'		// 'destination': 'source'
-			}
+			files: [{									// Dictionary of files
+				expand: true,
+				cwd: '/path/to/svg-files',
+				src: '{,*/}*.svg',						// Subfolders and files
+				dest: '/path/to/optimized'		
+			}]
 		}
 });
 
