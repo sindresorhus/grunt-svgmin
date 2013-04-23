@@ -2,10 +2,20 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		svgmin: {
-			compile: {
-				files: {
-					'test/tmp/test.svg': 'test/fixtures/test.svg'
-				}
+			usingdest: {
+				files: [{
+					expand: true,
+					cwd: 'test/fixtures',
+					src: '{,*/}*.svg',
+					dest: 'test/tmp'
+				}]
+			},
+			usingdefaultdest: {
+				files: [{
+					expand: true,
+					cwd: 'test/fixtures',
+					src: '{,*/}*.svg'
+				}]
 			}
 		},
 		simplemocha: {
@@ -14,7 +24,7 @@ module.exports = function (grunt) {
 			}
 		},
 		clean: {
-			test: ['test/tmp']
+			test: ['test/tmp', 'svgopt']
 		}
 	});
 
