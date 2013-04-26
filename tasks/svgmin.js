@@ -1,7 +1,8 @@
 'use strict';
 module.exports = function (grunt) {
 	grunt.registerMultiTask('svgmin', 'Minify SVG', function () {
-		var svgo = new (require('svgo'))();
+		var options = this.options();
+		var svgo = new (require('svgo'))(options.config);
 		var filesize = require('filesize');
 
 		grunt.util.async.forEach(this.files, function (el, next) {

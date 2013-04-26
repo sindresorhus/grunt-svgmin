@@ -1,10 +1,37 @@
 'use strict';
 module.exports = function (grunt) {
+	var plugins = [];
+	plugins[13] = {
+		name: 'removeViewBox',
+		active: false
+	};
 	grunt.initConfig({
 		svgmin: {
 			compile: {
 				files: {
 					'test/tmp/test.svg': 'test/fixtures/test.svg'
+				}
+			},
+			withconfig: {
+				options: {
+					config: {
+						plugins: plugins // to disable a specific plugin, it must be at the correct index in the plugins array (see above)
+					}
+				},
+				files: {
+					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
+				}
+			},
+			withcoaconfig: {
+				options: {
+					config: {
+						coa: {
+							disable: 'removeViewBox'
+						}
+					}
+				},
+				files: {
+					'test/tmp/withcoaconfig.svg': 'test/fixtures/test.svg'
 				}
 			}
 		},
