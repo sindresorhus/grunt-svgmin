@@ -14,9 +14,15 @@ module.exports = function (grunt) {
 			},
 			withconfig: {
 				options: {
-					config: {
-						plugins: plugins // to disable a specific plugin, it must be at the correct index in the plugins array (see above)
-					}
+					// unfortunately due to the way svgo merges configs, to disable a specific plugin it must be at the correct
+					// index in the plugins array compared to the default config in .svgo.yml.
+					// That means we can't configure it inline here so the plugins array is created above before the call to
+					// grunt.initConfig().
+					// This quirk is documented at https://github.com/svg/svgo/blob/master/docs/how-it-works/en.md in the Config
+					// section: "It's important to note that every plugin has its specific position in the plugins array".
+					// A neater way to configure svgo that avoids this quirk is to use command-line style configuration as in the
+					// "withcoaconfig" target below.
+					plugins: plugins
 				},
 				files: {
 					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
@@ -24,10 +30,8 @@ module.exports = function (grunt) {
 			},
 			withcoaconfig: {
 				options: {
-					config: {
-						coa: {
-							disable: 'removeViewBox'
-						}
+					coa: {
+						disable: 'removeViewBox'
 					}
 				},
 				files: {
