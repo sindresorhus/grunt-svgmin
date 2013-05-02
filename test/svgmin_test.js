@@ -16,7 +16,7 @@ describe('svgmin', function () {
 		var minified = fs.statSync('test/tmp/withconfig.svg').size;
 		assert(minified < original);
 		// the output svg should still contain the viewBox attribute
-		var svg = fs.readFileSync('test/tmp/withconfig.svg', { encoding: 'utf8' });
+		var svg = fs.readFileSync('test/tmp/withconfig.svg').toString();
 		assert(svg.indexOf('viewBox="0 0 360 334.99"') > 0);
 	});
 
@@ -25,7 +25,7 @@ describe('svgmin', function () {
 		var minified = fs.statSync('test/tmp/withcoaconfig.svg').size;
 		assert(minified < original);
 		// the output svg should still contain the viewBox attribute
-		var svg = fs.readFileSync('test/tmp/withconfig.svg', { encoding: 'utf8' });
+		var svg = fs.readFileSync('test/tmp/withconfig.svg').toString();
 		assert(svg.indexOf('viewBox="0 0 360 334.99"') > 0);
 	});
 });
