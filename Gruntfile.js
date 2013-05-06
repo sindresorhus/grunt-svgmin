@@ -16,16 +16,6 @@ module.exports = function (grunt) {
 				files: {
 					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
 				}
-			},
-			withcoaconfig: {
-				options: {
-					coa: {
-						disable: 'removeViewBox'
-					}
-				},
-				files: {
-					'test/tmp/withcoaconfig.svg': 'test/fixtures/test.svg'
-				}
 			}
 		},
 		simplemocha: {
