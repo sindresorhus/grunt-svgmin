@@ -9,11 +9,9 @@ module.exports = function (grunt) {
 			},
 			withconfig: {
 				options: {
-					plugins: [
-						{
-							removeViewBox: false
-						}
-					]
+					plugins: [{
+						removeViewBox: false
+					}]
 				},
 				files: {
 					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
