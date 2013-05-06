@@ -6,6 +6,16 @@ module.exports = function (grunt) {
 				files: {
 					'test/tmp/test.svg': 'test/fixtures/test.svg'
 				}
+			},
+			withconfig: {
+				options: {
+					plugins: [{
+						removeViewBox: false
+					}]
+				},
+				files: {
+					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
+				}
 			}
 		},
 		simplemocha: {

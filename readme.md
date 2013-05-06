@@ -35,6 +35,11 @@ See the [Gruntfile](Gruntfile.js) in this repo for a full example.
 ```javascript
 grunt.initConfig({
 	svgmin: {											// Task
+		options: {										// configuration that will be passed directly to svgo
+			plugins: [{ 
+				removeViewBox: false 
+			}]
+		},
 		dist: {											// Target
 			files: {									// Dictionary of files
 				'dist/figure.svg': 'app/figure.svg'		// 'destination': 'source'
