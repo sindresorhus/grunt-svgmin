@@ -49,6 +49,19 @@ grunt.loadNpmTasks('grunt-svgmin');
 grunt.registerTask('default', ['svgmin']);
 ```
 
+### Available Options/Plugins
+
+svgmin makes use of the standard SVGO plugins. Therefore, to customize configuration options applied to SVGs when running this Grunt task, you can disable/enable any SVGO plugins listed at the SVGO repository: [https://github.com/svg/svgo/tree/master/plugins](https://github.com/svg/svgo/tree/master/plugins).
+
+You can disable any plugins by looking for the plugin name without the file extension and then setting it's value in the JSON to false. To exemplify, here is how the pugins section illustrated above in the example config might be written with some of the standard SVGO plugins disabled:
+
+```javascript
+plugins: [{
+	removeViewBox: false, // Don't remove the viewbox atribute from the SVG
+	removeUselessStrokeAndFill: false, // Don't remove Useless Strokes and Fills
+	removeEmptyAttrs: false // Don't remove Empty Attributes from the SVG
+}]
+```
 
 ## License
 
