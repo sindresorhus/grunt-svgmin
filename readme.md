@@ -51,9 +51,9 @@ grunt.registerTask('default', ['svgmin']);
 
 ### Available Options/Plugins
 
-svgmin makes use of the standard SVGO plugins. Therefore, to customize configuration options applied to SVGs when running this Grunt task, you can disable/enable any SVGO plugins listed at the SVGO repository: [https://github.com/svg/svgo/tree/master/plugins](https://github.com/svg/svgo/tree/master/plugins).
+svgmin makes use of the standard SVGO plugins. Therefore, to customize configuration options applied to SVGs when running this Grunt task, you can disable/enable any SVGO plugins listed at the SVGO repository: [SVGO repository](https://github.com/svg/svgo/tree/master/plugins).
 
-You can disable any plugins by looking for the plugin name without the file extension and then setting it's value in the JSON to false. To exemplify, here is how the pugins section illustrated above in the example config might be written with some of the standard SVGO plugins disabled:
+You can disable any plugins by looking for the plugin name (minus the file extension) and then setting its value in the JSON to `false`. To exemplify, here is how the plugins section in the example configuration (illustrated above) might be written with some of the standard SVGO plugins disabled:
 
 ```javascript
 plugins: [{
