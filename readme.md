@@ -43,6 +43,7 @@ grunt.initConfig({
 				'dist/figure.svg': 'app/figure.svg'		// 'destination': 'source'
 			}
 		}
+	}
 });
 
 grunt.loadNpmTasks('grunt-svgmin');
