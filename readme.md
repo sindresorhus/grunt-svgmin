@@ -28,7 +28,7 @@ grunt.loadNpmTasks('grunt-svgmin');
 See the [Gruntfile](Gruntfile.js) in this repo for a full example.
 
 
-### Example config
+### Example config (static)
 
 ```javascript
 grunt.initConfig({
@@ -42,6 +42,32 @@ grunt.initConfig({
 			files: {									// Dictionary of files
 				'dist/figure.svg': 'app/figure.svg'		// 'destination': 'source'
 			}
+		}
+	}
+});
+
+grunt.loadNpmTasks('grunt-svgmin');
+grunt.registerTask('default', ['svgmin']);
+```
+
+### Example config (Dynamic)
+
+```javascript
+grunt.initConfig({
+	svgmin: {											// Task
+		options: {										// Configuration that will be passed directly to SVGO
+			plugins: [{
+				removeViewBox: false
+			}]
+		},
+		dist: {														// Target
+      files: [{                                 			 // Dictionary of files
+        expand: true,     			// Enable dynamic expansion.
+        cwd: 'img/src',      			// Src matches are relative to this path.
+        src: ['**/*.svg'], 			// Actual pattern(s) to match.
+        dest: 'img/',   			// Destination path prefix.
+        ext: '.min.svg'   			// Dest filepaths will have this extension.
+      }]
 		}
 	}
 });
