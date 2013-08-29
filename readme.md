@@ -55,18 +55,19 @@ grunt.registerTask('default', ['svgmin']);
 ```javascript
 grunt.initConfig({
 	svgmin: {											// Task
-		options: {										// Configuration that will be passed directly to SVGO
+		options: {									// Configuration that will be passed directly to SVGO
 			plugins: [{
 				removeViewBox: false
 			}]
 		},
-		dist: {														// Target
-      files: [{                                 			 // Dictionary of files
+		dist: {											// Target
+      files: [{                 // Dictionary of files
         expand: true,     			// Enable dynamic expansion.
-        cwd: 'img/src',      			// Src matches are relative to this path.
+        cwd: 'img/src',      		// Src matches are relative to this path.
         src: ['**/*.svg'], 			// Actual pattern(s) to match.
-        dest: 'img/',   			// Destination path prefix.
+        dest: 'img/',   				// Destination path prefix.
         ext: '.min.svg'   			// Dest filepaths will have this extension.
+        // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
       }]
 		}
 	}
