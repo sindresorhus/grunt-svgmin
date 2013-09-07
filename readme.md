@@ -30,7 +30,7 @@ See the [Gruntfile](Gruntfile.js) in this repo for a full example.
 
 ### Example config (static)
 
-```javascript
+```js
 grunt.initConfig({
 	svgmin: {											// Task
 		options: {										// Configuration that will be passed directly to SVGO
@@ -50,26 +50,25 @@ grunt.loadNpmTasks('grunt-svgmin');
 grunt.registerTask('default', ['svgmin']);
 ```
 
-### Example config (Dynamic)
+### Example config (dynamic)
 
-```javascript
+```js
 grunt.initConfig({
-	svgmin: {											// Task
-		options: {									// Configuration that will be passed directly to SVGO
+	svgmin: {						// Task
+		options: {					// Configuration that will be passed directly to SVGO
 			plugins: [{
 				removeViewBox: false
 			}]
 		},
-		dist: {											// Target
-      files: [{                 // Dictionary of files
-        expand: true,     			// Enable dynamic expansion.
-        cwd: 'img/src',      		// Src matches are relative to this path.
-        src: ['**/*.svg'], 			// Actual pattern(s) to match.
-        dest: 'img/',   				// Destination path prefix.
-        ext: '.min.svg'   			// Dest filepaths will have this extension.
-        // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
-      }]
-		}
+	dist: {							// Target
+		files: [{					// Dictionary of files
+			expand: true,			// Enable dynamic expansion.
+			cwd: 'img/src',			// Src matches are relative to this path.
+			src: ['**/*.svg'],		// Actual pattern(s) to match.
+			dest: 'img/',			// Destination path prefix.
+			ext: '.min.svg'			// Dest filepaths will have this extension.
+			// ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
+		}]
 	}
 });
 
@@ -83,14 +82,14 @@ svgmin makes use of the standard SVGO plugin architecture. Therefore, to customi
 
 To disable plugins with the Gruntfile.js, look for the plugin name at the [SVGO repository](https://github.com/svg/svgo/tree/master/plugins) and copy the plugin name (minus the file extension). Then set its value in the JSON to `false`. To exemplify, here is how the plugins section in the example configuration (illustrated above) might be written with some of the standard SVGO plugins disabled:
 
-```javascript
+```js
 plugins: [{
-	removeViewBox: false, // Don't remove the viewbox atribute from the SVG
-	removeUselessStrokeAndFill: false, // Don't remove Useless Strokes and Fills
-	removeEmptyAttrs: false // Don't remove Empty Attributes from the SVG
+	removeViewBox: false, 				// don't remove the viewbox atribute from the SVG
+	removeUselessStrokeAndFill: false,	// don't remove Useless Strokes and Fills
+	removeEmptyAttrs: false				// don't remove Empty Attributes from the SVG
 }]
 ```
 
 ## License
 
-MIT License • © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
