@@ -62,11 +62,11 @@ grunt.initConfig({
 		},
 		dist: {						// Target
 			files: [{				// Dictionary of files
-				expand: true,			// Enable dynamic expansion.
-				cwd: 'img/src',			// Src matches are relative to this path.
-				src: ['**/*.svg'],		// Actual pattern(s) to match.
-				dest: 'img/',			// Destination path prefix.
-				ext: '.min.svg'			// Dest filepaths will have this extension.
+				expand: true,		// Enable dynamic expansion.
+				cwd: 'img/src',		// Src matches are relative to this path.
+				src: ['**/*.svg'],	// Actual pattern(s) to match.
+				dest: 'img/',		// Destination path prefix.
+				ext: '.min.svg'		// Dest filepaths will have this extension.
 				// ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
 			}]
 		}
