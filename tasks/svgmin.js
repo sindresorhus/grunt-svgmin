@@ -13,7 +13,12 @@ module.exports = function (grunt) {
 				} else {
 					var saved = svgin.length - result.data.length;
 					var percentage = saved / svgin.length * 100;
-					grunt.log.writeln('✔ '.green + el.src + (' (saved ' + filesize(saved) + ' ' + Math.round(percentage) + '%)').grey);
+					var savedFormatted = filesize(saved, {
+						round: 1,
+						spacer: ''
+					});
+
+					grunt.log.writeln('✔ '.green + el.src + (' (saved ' + savedFormatted + ' ' + Math.round(percentage) + '%)').grey);
 					grunt.file.write(el.dest, result.data);
 				}
 				next();
