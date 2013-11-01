@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "svgo": "~0.3.1",
-    "filesize": "~2.0.0"
+    "filesize": "~2.0.0",
+    "chalk": "~0.3.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

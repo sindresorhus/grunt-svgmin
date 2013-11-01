@@ -1,4 +1,6 @@
 'use strict';
+var chalk = require('chalk');
+
 module.exports = function (grunt) {
 	grunt.registerMultiTask('svgmin', 'Minify SVG', function () {
 		var options = this.options();
@@ -18,7 +20,7 @@ module.exports = function (grunt) {
 						spacer: ''
 					});
 
-					grunt.log.writeln('✔ '.green + el.src + (' (saved ' + savedFormatted + ' ' + Math.round(percentage) + '%)').grey);
+					grunt.log.writeln(chalk.green('✔ ') + el.src + chalk.gray(' (saved', savedFormatted, Math.round(percentage) + '%)'));
 					grunt.file.write(el.dest, result.data);
 				}
 				next();
