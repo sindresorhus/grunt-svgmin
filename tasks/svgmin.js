@@ -1,5 +1,6 @@
 'use strict';
 var chalk = require('chalk');
+var async = require('async');
 
 module.exports = function (grunt) {
 	grunt.registerMultiTask('svgmin', 'Minify SVG', function () {
@@ -7,7 +8,7 @@ module.exports = function (grunt) {
 		var svgo = new (require('svgo'))(options);
 		var filesize = require('filesize');
 
-		grunt.util.async.forEach(this.files, function (el, next) {
+		async.each(this.files, function (el, next) {
 			var svgin = grunt.file.read(el.src + '');
 			svgo.optimize(svgin, function (result) {
 				if (result.error) {

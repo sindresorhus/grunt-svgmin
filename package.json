@@ -26,9 +26,10 @@
     "test": "grunt"
   },
   "dependencies": {
-    "svgo": "~0.3.1",
+    "svgo": "~0.4.1",
     "filesize": "~2.0.0",
-    "chalk": "~0.3.0"
+    "chalk": "~0.3.0",
+    "async": "~0.2.9"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
