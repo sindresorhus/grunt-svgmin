@@ -1,8 +1,6 @@
-# grunt-svgmin [![Build Status](https://secure.travis-ci.org/sindresorhus/grunt-svgmin.png?branch=master)](http://travis-ci.org/sindresorhus/grunt-svgmin)
+# grunt-svgmin [![Build Status](https://secure.travis-ci.org/sindresorhus/grunt-svgmin.png?branch=master)](http://travis-ci.org/sindresorhus/grunt-svgmin) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-[Grunt][grunt] tasks to minify SVG using [SVGO](https://github.com/svg/svgo)
-
-> SVG files, especially exported from various editors, usually contains a lot of redundant and useless information such as editor metadata, comments, hidden elements, default or non-optimal values and other stuff that can be safely removed or converted without affecting SVG rendering result.
+> Minify SVG using [SVGO](https://github.com/svg/svgo)
 
 
 ## Getting Started
