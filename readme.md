@@ -34,9 +34,10 @@ See the [Gruntfile](Gruntfile.js) in this repo for a full example.
 grunt.initConfig({
 	svgmin: {											// Task
 		options: {										// Configuration that will be passed directly to SVGO
-			plugins: [{
-				removeViewBox: false
-			}]
+			plugins: [
+			  { removeViewBox: false },
+			  { removeUselessStrokeAndFill: false }
+			]
 		},
 		dist: {											// Target
 			files: {									// Dictionary of files
@@ -56,9 +57,10 @@ grunt.registerTask('default', ['svgmin']);
 grunt.initConfig({
 	svgmin: {						// Task
 		options: {					// Configuration that will be passed directly to SVGO
-			plugins: [{
-				removeViewBox: false
-			}]
+			plugins: [
+			  { removeViewBox: false },
+			  { removeUselessStrokeAndFill: false }
+			]
 		},
 		dist: {						// Target
 			files: [{				// Dictionary of files
@@ -80,15 +82,17 @@ grunt.registerTask('default', ['svgmin']);
 
 svgmin makes use of the standard SVGO plugin architecture. Therefore, to customize SVG optimisation, you can disable/enable any SVGO plugins listed at the [SVGO repository](https://github.com/svg/svgo/tree/master/plugins).
 
-To disable plugins with the Gruntfile.js, look for the plugin name at the [SVGO repository](https://github.com/svg/svgo/tree/master/plugins) and copy the plugin name (minus the file extension). Then set its value in the JSON to `false`. To exemplify, here is how the plugins section in the example configuration (illustrated above) might be written with some of the standard SVGO plugins disabled:
+To disable plugins with the Gruntfile.js, look for the plugin name at the [SVGO repository](https://github.com/svg/svgo/tree/master/plugins) and copy the plugin name (minus the file extension). Then set its value in the JSON to `false` in comma-separated objects. To exemplify, here is how the plugins section in the example configuration (illustrated above) might be written with some of the standard SVGO plugins disabled:
 
 ```js
-plugins: [{
-	removeViewBox: false, 				// don't remove the viewbox atribute from the SVG
-	removeUselessStrokeAndFill: false,	// don't remove Useless Strokes and Fills
-	removeEmptyAttrs: false				// don't remove Empty Attributes from the SVG
+plugins: [
+	{ removeViewBox: false }, 				// don't remove the viewbox atribute from the SVG
+	{ removeUselessStrokeAndFill: false },	// don't remove Useless Strokes and Fills
+	{ removeEmptyAttrs: false }				// don't remove Empty Attributes from the SVG
 }]
 ```
+
+Check each plugin for `exports.active = [true/false]` to see if the plugin is enabled. Most of the plugins are enabled by default but you may want to prevent a couple, particularly `removeUselessStrokeAndFill` as that may remove small details with subtracted / extruded complex paths.
 
 ## License
 
