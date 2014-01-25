@@ -89,7 +89,7 @@ plugins: [
 	{ removeViewBox: false }, 				// don't remove the viewbox atribute from the SVG
 	{ removeUselessStrokeAndFill: false },	// don't remove Useless Strokes and Fills
 	{ removeEmptyAttrs: false }				// don't remove Empty Attributes from the SVG
-}]
+]
 ```
 
 Check each plugin for `exports.active = [true/false]` to see if the plugin is enabled. Most of the plugins are enabled by default but you may want to prevent a couple, particularly `removeUselessStrokeAndFill` as that may remove small details with subtracted / extruded complex paths.
