@@ -28,8 +28,8 @@
   "dependencies": {
     "svgo": "~0.4.1",
     "filesize": "~2.0.0",
-    "chalk": "~0.3.0",
-    "async": "~0.2.9"
+    "chalk": "~0.4.0",
+    "each-async": "~0.1.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
