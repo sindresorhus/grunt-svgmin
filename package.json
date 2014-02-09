@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "svgo": "~0.4.1",
-    "filesize": "~2.0.0",
     "chalk": "~0.4.0",
-    "each-async": "~0.1.2"
+    "each-async": "~0.1.2",
+    "pretty-bytes": "~0.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -37,10 +37,10 @@
     "grunt-simple-mocha": "~0.4.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4"
+    "grunt": "~0.4.0"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   },
   "licenses": {
     "type": "MIT"
