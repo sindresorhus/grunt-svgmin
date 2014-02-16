@@ -2,6 +2,8 @@
 
 > Minify SVG using [SVGO](https://github.com/svg/svgo)
 
+*Issues with the output should be reported on the SVGO [issue tracker](https://github.com/svg/svgo/issues).*
+
 
 ## Getting Started
 
