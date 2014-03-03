@@ -18,14 +18,14 @@ module.exports = function (grunt) {
 				}
 			},
 
-            multiple: {
-                files: [{
-                    expand:true,
-                    cwd: 'test/fixtures/',
-                    src: ['**/*.svg'],  // Actual pattern(s) to match.
-                    dest: 'test/tmp/'
-                }]
-            }
+			multiple: {
+				files: [{
+					expand:true,
+					cwd: 'test/fixtures/',
+					src: ['**/*.svg'],  // Actual pattern(s) to match.
+					dest: 'test/tmp/'
+				}]
+			}
 		},
 		simplemocha: {
 			test: {
