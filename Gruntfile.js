@@ -16,6 +16,15 @@ module.exports = function (grunt) {
 				files: {
 					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
 				}
+			},
+
+			multiple: {
+				files: [{
+					expand:true,
+					cwd: 'test/fixtures/',
+					src: ['**/*.svg'],  // Actual pattern(s) to match.
+					dest: 'test/tmp/'
+				}]
 			}
 		},
 		simplemocha: {
