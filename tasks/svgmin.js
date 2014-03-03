@@ -28,6 +28,6 @@ module.exports = function (grunt) {
 			});
 		}, this.async());
 
-		grunt.log.writeln(chalk.gray('Bytes saved in total: ' + chalk.bold(prettyBytes(totalSaved))));
+		grunt.log.writeln('Total saved: ' + chalk.green(prettyBytes(totalSaved)));
 	});
 };
