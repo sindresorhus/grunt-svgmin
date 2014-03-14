@@ -9,9 +9,10 @@ module.exports = function (grunt) {
 			},
 			withconfig: {
 				options: {
-					plugins: [{
-						removeViewBox: false
-					}]
+					plugins: [
+						{removeViewBox: false},
+						{convertPathData: { straightCurves:false }}  // Advanced svgo plugin option
+					]
 				},
 				files: {
 					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
