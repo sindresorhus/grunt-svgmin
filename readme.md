@@ -59,10 +59,15 @@ grunt.registerTask('default', ['svgmin']);
 grunt.initConfig({
 	svgmin: {						// Task
 		options: {					// Configuration that will be passed directly to SVGO
-			plugins: [
-			  { removeViewBox: false },
-			  { removeUselessStrokeAndFill: false }
-			]
+			plugins: [{
+				removeViewBox: false
+			}, {
+				removeUselessStrokeAndFill: false
+			}, {
+				convertPathData: { 
+					straightCurves: false // advanced SVGO plugin option
+				}
+			}]
 		},
 		dist: {						// Target
 			files: [{				// Dictionary of files

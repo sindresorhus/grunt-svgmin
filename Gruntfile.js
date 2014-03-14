@@ -11,7 +11,7 @@ module.exports = function (grunt) {
 				options: {
 					plugins: [
 						{removeViewBox: false},
-						{convertPathData: { straightCurves:false }}  // Advanced svgo plugin option
+						{convertPathData: { straightCurves: false }}  // advanced SVGO plugin option
 					]
 				},
 				files: {
