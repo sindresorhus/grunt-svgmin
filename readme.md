@@ -79,6 +79,7 @@ grunt.initConfig({
 				// ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
 			}]
 		}
+	}
 });
 
 grunt.loadNpmTasks('grunt-svgmin');
