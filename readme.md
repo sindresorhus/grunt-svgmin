@@ -5,86 +5,40 @@
 *Issues with the output should be reported on the SVGO [issue tracker](https://github.com/svg/svgo/issues).*
 
 
-## Getting Started
+## Install
 
-If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [gruntfile][Getting Started] as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
-
-```bash
+```sh
 $ npm install --save-dev grunt-svgmin
 ```
 
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+## Usage
 
 ```js
-grunt.loadNpmTasks('grunt-svgmin');
-```
+require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
-*Tip: the [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks) module makes it easier to load multiple grunt tasks.*
-
-[grunt]: http://gruntjs.com
-[Getting Started]: http://gruntjs.com/getting-started
-
-
-## Documentation
-
-See the [Gruntfile](Gruntfile.js) in this repo for a full example.
-
-
-### Example config (static)
-
-```js
 grunt.initConfig({
-	svgmin: {											// Task
-		options: {										// Configuration that will be passed directly to SVGO
+	svgmin: {
+		options: {
 			plugins: [
-			  { removeViewBox: false },
-			  { removeUselessStrokeAndFill: false }
+				{
+					removeViewBox: false
+				}, {
+					removeUselessStrokeAndFill: false
+				}
 			]
 		},
-		dist: {											// Target
-			files: {									// Dictionary of files
-				'dist/figure.svg': 'app/figure.svg'		// 'destination': 'source'
+		dist: {
+			files: {
+				'dist/unicorn.svg': 'app/unicorn.svg'
 			}
 		}
 	}
 });
 
-grunt.loadNpmTasks('grunt-svgmin');
 grunt.registerTask('default', ['svgmin']);
 ```
 
-### Example config (dynamic)
-
-```js
-grunt.initConfig({
-	svgmin: {						// Task
-		options: {					// Configuration that will be passed directly to SVGO
-			plugins: [{
-				removeViewBox: false
-			}, {
-				removeUselessStrokeAndFill: false
-			}, {
-				convertPathData: { 
-					straightCurves: false // advanced SVGO plugin option
-				}
-			}]
-		},
-		dist: {						// Target
-			files: [{				// Dictionary of files
-				expand: true,		// Enable dynamic expansion.
-				cwd: 'img/src',		// Src matches are relative to this path.
-				src: ['**/*.svg'],	// Actual pattern(s) to match.
-				dest: 'img/',		// Destination path prefix.
-				ext: '.min.svg'		// Dest filepaths will have this extension.
-				// ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
-			}]
-		}
-	}
-});
-
-grunt.loadNpmTasks('grunt-svgmin');
-grunt.registerTask('default', ['svgmin']);
-```
 
 ### Available Options/Plugins
 
@@ -105,4 +59,4 @@ Check each plugin for `exports.active = [true/false]` to see if the plugin is en
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)

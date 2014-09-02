@@ -2,10 +2,12 @@
 var chalk = require('chalk');
 var eachAsync = require('each-async');
 var prettyBytes = require('pretty-bytes');
+var logSymbols = require('log-symbols');
 var SVGO = require('svgo');
 
 module.exports = function (grunt) {
 	grunt.registerMultiTask('svgmin', 'Minify SVG', function () {
+		var done = this.async();
 		var svgo = new SVGO(this.options());
 		var totalSaved = 0;
 
@@ -15,19 +17,22 @@ module.exports = function (grunt) {
 
 			svgo.optimize(srcSvg, function (result) {
 				if (result.error) {
-					return grunt.warn('Error parsing SVG: ' + result.error);
+					grunt.warn('Error parsing SVG:', result.error);
+					next();
+					return;
 				}
 
 				var saved = srcSvg.length - result.data.length;
 				var percentage = saved / srcSvg.length * 100;
 				totalSaved += saved;
 
-				grunt.log.writeln(chalk.green('✔ ') + srcPath + chalk.gray(' (saved ' + chalk.bold(prettyBytes(saved)) + ' ' + Math.round(percentage) + '%)'));
+				grunt.log.writeln(logSymbols.success + ' ' + srcPath + chalk.gray(' (saved ' + chalk.bold(prettyBytes(saved)) + ' ' + Math.round(percentage) + '%)'));
 				grunt.file.write(el.dest, result.data);
 				next();
 			});
-		}, this.async());
-
-		grunt.log.writeln('Total saved: ' + chalk.green(prettyBytes(totalSaved)));
+		}, function () {
+			grunt.log.writeln('Total saved: ' + chalk.green(prettyBytes(totalSaved)));
+			done();
+		});
 	});
 };

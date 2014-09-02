@@ -11,19 +11,18 @@ module.exports = function (grunt) {
 				options: {
 					plugins: [
 						{removeViewBox: false},
-						{convertPathData: { straightCurves: false }}  // advanced SVGO plugin option
+						{convertPathData: { straightCurves: false }}
 					]
 				},
 				files: {
 					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
 				}
 			},
-
 			multiple: {
 				files: [{
 					expand:true,
 					cwd: 'test/fixtures/',
-					src: ['**/*.svg'],  // Actual pattern(s) to match.
+					src: ['**/*.svg'],
 					dest: 'test/tmp/'
 				}]
 			}
