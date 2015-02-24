@@ -1,6 +1,6 @@
 {
   "name": "grunt-svgmin",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Minify SVG",
   "keywords": [
     "gruntplugin",
