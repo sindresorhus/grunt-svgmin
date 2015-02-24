@@ -21,7 +21,7 @@
     "test": "grunt"
   },
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "each-async": "^1.0.0",
     "log-symbols": "^1.0.0",
     "pretty-bytes": "^1.0.1",
