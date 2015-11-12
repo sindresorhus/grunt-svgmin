@@ -25,7 +25,7 @@
     "each-async": "^1.0.0",
     "log-symbols": "^1.0.0",
     "pretty-bytes": "^1.0.1",
-    "svgo": "^0.5.0"
+    "svgo": "^0.6.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
