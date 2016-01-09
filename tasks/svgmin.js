@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 
 			svgo.optimize(srcSvg, function (result) {
 				if (result.error) {
-					grunt.warn('Error parsing SVG: ' + result.error);
+					grunt.warn(srcPath + ': ' + result.error);
 					next();
 					return;
 				}
