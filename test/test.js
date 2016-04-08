@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-env mocha */
 var assert = require('assert');
 var fs = require('fs');
 
@@ -8,7 +9,7 @@ it('minifies SVG', function () {
 	assert(minified < original);
 });
 
-it('minifies svgo but preserves viewBox attribute', function() {
+it('minifies svgo but preserves viewBox attribute', function () {
 	var original = fs.statSync('test/fixtures/test.svg').size;
 	var minified = fs.statSync('test/tmp/withconfig.svg').size;
 	assert(minified < original);

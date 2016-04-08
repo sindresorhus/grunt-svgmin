@@ -11,7 +11,7 @@ module.exports = function (grunt) {
 				options: {
 					plugins: [
 						{removeViewBox: false},
-						{convertPathData: { straightCurves: false }}
+						{convertPathData: {straightCurves: false}}
 					]
 				},
 				files: {
@@ -20,7 +20,7 @@ module.exports = function (grunt) {
 			},
 			multiple: {
 				files: [{
-					expand:true,
+					expand: true,
 					cwd: 'test/fixtures/',
 					src: ['**/*.svg'],
 					dest: 'test/tmp/'
