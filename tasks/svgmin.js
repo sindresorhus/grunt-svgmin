@@ -10,7 +10,6 @@ module.exports = function (grunt) {
 		var done = this.async();
 		var svgo = new SVGO(this.options());
 		var totalSaved = 0;
-		var noVerbose = this.options().noVerbose || false;
 
 		eachAsync(this.files, function (el, i, next) {
 			var srcPath = el.src[0];
@@ -27,9 +26,7 @@ module.exports = function (grunt) {
 				var percentage = saved / srcSvg.length * 100;
 				totalSaved += saved;
 
-				if (!noVerbose) {
-					grunt.log.writeln(logSymbols.success + ' ' + srcPath + chalk.gray(' (saved ' + chalk.bold(prettyBytes(saved)) + ' ' + Math.round(percentage) + '%)'));
-				}
+				grunt.verbose.writeln(logSymbols.success + ' ' + srcPath + chalk.gray(' (saved ' + chalk.bold(prettyBytes(saved)) + ' ' + Math.round(percentage) + '%)'));
 				grunt.file.write(el.dest, result.data);
 				next();
 			});
