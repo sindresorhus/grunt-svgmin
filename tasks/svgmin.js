@@ -26,7 +26,7 @@ module.exports = function (grunt) {
 				var percentage = saved / srcSvg.length * 100;
 				totalSaved += saved;
 
-				grunt.log.writeln(logSymbols.success + ' ' + srcPath + chalk.gray(' (saved ' + chalk.bold(prettyBytes(saved)) + ' ' + Math.round(percentage) + '%)'));
+				grunt.verbose.writeln(logSymbols.success + ' ' + srcPath + chalk.gray(' (saved ' + chalk.bold(prettyBytes(saved)) + ' ' + Math.round(percentage) + '%)'));
 				grunt.file.write(el.dest, result.data);
 				next();
 			});

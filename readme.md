@@ -71,6 +71,11 @@ plugins: [
 Check each plugin for `exports.params` to see if it has default parameters and what they are.
 
 
+## Note
+
+Per-file savings are only printed in verbose mode (`grunt svgmin --verbose`).
+
+
 ## License
 
 MIT © [Sindre Sorhus](https://sindresorhus.com)
