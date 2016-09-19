@@ -2,6 +2,22 @@
   "name": "grunt-svgmin",
   "version": "3.3.0",
   "description": "Minify SVG",
+  "license": "MIT",
+  "repository": "sindresorhus/grunt-svgmin",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && grunt"
+  },
+  "files": [
+    "tasks"
+  ],
   "keywords": [
     "gruntplugin",
     "svg",
@@ -11,29 +27,11 @@
     "optimize",
     "minify"
   ],
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "repository": "sindresorhus/grunt-svgmin",
-  "scripts": {
-    "test": "xo && grunt"
-  },
-  "engines": {
-    "node": ">=0.12.0"
-  },
-  "licenses": {
-    "type": "MIT"
-  },
-  "files": [
-    "tasks"
-  ],
   "dependencies": {
     "chalk": "^1.0.0",
     "each-async": "^1.0.0",
     "log-symbols": "^1.0.0",
-    "pretty-bytes": "^3.0.0",
+    "pretty-bytes": "^4.0.2",
     "svgo": "^0.7.0"
   },
   "devDependencies": {
@@ -45,5 +43,8 @@
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
+  },
+  "xo": {
+    "esnext": true
   }
 }
