@@ -1,6 +1,6 @@
 {
   "name": "grunt-svgmin",
-  "version": "3.3.0",
+  "version": "4.0.0",
   "description": "Minify SVG",
   "license": "MIT",
   "repository": "sindresorhus/grunt-svgmin",
