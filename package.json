@@ -21,7 +21,7 @@
     "test": "xo && grunt"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.0"
   },
   "licenses": {
     "type": "MIT"
@@ -34,7 +34,7 @@
     "each-async": "^1.0.0",
     "log-symbols": "^1.0.0",
     "pretty-bytes": "^3.0.0",
-    "svgo": "^0.6.0"
+    "svgo": "^0.7.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
