@@ -70,6 +70,7 @@ plugins: [
 
 Check each plugin for `exports.params` to see if it has default parameters and what they are.
 
+In verbose mode grunt task will print per-file savings.
 
 ## Note
 
