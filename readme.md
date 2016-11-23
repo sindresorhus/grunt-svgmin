@@ -43,6 +43,19 @@ grunt.initConfig({
 grunt.registerTask('default', ['svgmin']);
 ```
 
+### Optimizing multiple SVG files
+
+Use the same config above just changing `files` to:
+```js
+files: [
+  {
+    cwd: 'src/img/',
+    expand: true,
+    src: ['**/*.svg'],
+    dest: 'dist/img/'
+  }
+]
+```
 
 ### Available Options/Plugins
 
