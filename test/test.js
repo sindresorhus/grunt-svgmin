@@ -13,7 +13,7 @@ it('minifies svgo but preserves viewBox attribute', () => {
 	const original = fs.statSync('test/fixtures/test.svg').size;
 	const minified = fs.statSync('test/tmp/withconfig.svg').size;
 	assert(minified < original);
-	// the output svg should still contain the viewBox attribute
+	// The output svg should still contain the viewBox attribute
 	const svg = fs.readFileSync('test/tmp/withconfig.svg').toString();
 	assert(svg.indexOf('viewBox="0 0 360 334.99"') > 0);
 });
