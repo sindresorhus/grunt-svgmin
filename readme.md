@@ -52,9 +52,9 @@ To disable plugins with the gruntfile.js, look for the plugin name at the [SVGO 
 
 ```js
 plugins: [
-	{removeViewBox: false},               // don't remove the viewbox atribute from the SVG
-	{removeUselessStrokeAndFill: false},  // don't remove Useless Strokes and Fills
-	{removeEmptyAttrs: false}             // don't remove Empty Attributes from the SVG
+	{removeViewBox: false},               // Don't remove the viewbox atribute from the SVG
+	{removeUselessStrokeAndFill: false},  // Don't remove Useless Strokes and Fills
+	{removeEmptyAttrs: false}             // Don't remove Empty Attributes from the SVG
 ]
 ```
 
@@ -64,7 +64,11 @@ To configure specific parameters for a plugin with the gruntfile.js, set its val
 
 ```js
 plugins: [
-	{ removeAttrs: { attrs: ['xmlns'] } }
+	{
+		removeAttrs: {
+			attrs: ['xmlns']
+		}
+	}
 ]
 ```
 

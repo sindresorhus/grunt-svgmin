@@ -1,50 +1,47 @@
 {
-  "name": "grunt-svgmin",
-  "version": "4.0.0",
-  "description": "Minify SVG",
-  "license": "MIT",
-  "repository": "sindresorhus/grunt-svgmin",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && grunt"
-  },
-  "files": [
-    "tasks"
-  ],
-  "keywords": [
-    "gruntplugin",
-    "svg",
-    "vector",
-    "graphic",
-    "image",
-    "optimize",
-    "minify"
-  ],
-  "dependencies": {
-    "chalk": "^2.3.0",
-    "each-async": "^1.1.1",
-    "log-symbols": "^2.1.0",
-    "pretty-bytes": "^4.0.2",
-    "svgo": "^1.0.3"
-  },
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-simple-mocha": "^0.4.0",
-    "xo": "*"
-  },
-  "peerDependencies": {
-    "grunt": ">=0.4.0"
-  },
-  "xo": {
-    "esnext": true
-  }
+	"name": "grunt-svgmin",
+	"version": "4.0.0",
+	"description": "Minify SVG",
+	"license": "MIT",
+	"repository": "sindresorhus/grunt-svgmin",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && grunt"
+	},
+	"files": [
+		"tasks"
+	],
+	"keywords": [
+		"gruntplugin",
+		"svg",
+		"vector",
+		"graphic",
+		"image",
+		"optimize",
+		"minify"
+	],
+	"dependencies": {
+		"chalk": "^2.3.0",
+		"each-async": "^1.1.1",
+		"log-symbols": "^2.1.0",
+		"pretty-bytes": "^4.0.2",
+		"svgo": "^1.0.3"
+	},
+	"devDependencies": {
+		"grunt": "^1.0.1",
+		"grunt-cli": "^1.2.0",
+		"grunt-contrib-clean": "^1.0.0",
+		"grunt-simple-mocha": "^0.4.0",
+		"xo": "*"
+	},
+	"peerDependencies": {
+		"grunt": ">=0.4.0"
+	}
 }
