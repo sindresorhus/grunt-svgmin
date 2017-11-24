@@ -15,7 +15,7 @@ module.exports = grunt => {
 			const srcPath = el.src[0];
 			const srcSvg = grunt.file.read(srcPath);
 
-			svgo.optimize(srcSvg, result => {
+			svgo.optimize(srcSvg).then(result => {
 				if (result.error) {
 					grunt.warn(srcPath + ': ' + result.error);
 					next();

@@ -28,11 +28,11 @@
     "minify"
   ],
   "dependencies": {
-    "chalk": "^1.0.0",
-    "each-async": "^1.0.0",
-    "log-symbols": "^1.0.0",
+    "chalk": "^2.3.0",
+    "each-async": "^1.1.1",
+    "log-symbols": "^2.1.0",
     "pretty-bytes": "^4.0.2",
-    "svgo": "^0.7.0"
+    "svgo": "^1.0.3"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
