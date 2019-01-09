@@ -52,7 +52,7 @@ To disable plugins with the gruntfile.js, look for the plugin name at the [SVGO 
 
 ```js
 plugins: [
-	{removeViewBox: false},               // Don't remove the viewbox atribute from the SVG
+	{removeViewBox: false},               // Don't remove the viewbox attribute from the SVG
 	{removeUselessStrokeAndFill: false},  // Don't remove Useless Strokes and Fills
 	{removeEmptyAttrs: false}             // Don't remove Empty Attributes from the SVG
 ]
