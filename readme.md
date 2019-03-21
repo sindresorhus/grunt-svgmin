@@ -15,7 +15,7 @@ $ npm install --save-dev grunt-svgmin
 ## Usage
 
 ```js
-require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+require('load-grunt-tasks')(grunt);
 
 grunt.initConfig({
 	svgmin: {
@@ -23,11 +23,15 @@ grunt.initConfig({
 			plugins: [
 				{
 					removeViewBox: false
-				}, {
+				},
+				{
 					removeUselessStrokeAndFill: false
-				}, {
+				},
+				{
 					removeAttrs: {
-						attrs: ['xmlns']
+						attrs: [
+							'xmlns'
+						]
 					}
 				}
 			]
@@ -66,7 +70,9 @@ To configure specific parameters for a plugin with the gruntfile.js, set its val
 plugins: [
 	{
 		removeAttrs: {
-			attrs: ['xmlns']
+			attrs: [
+				'xmlns'
+			]
 		}
 	}
 ]

@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = grunt => {
 	grunt.initConfig({
 		svgmin: {
@@ -10,8 +11,14 @@ module.exports = grunt => {
 			withconfig: {
 				options: {
 					plugins: [
-						{removeViewBox: false},
-						{convertPathData: {straightCurves: false}}
+						{
+							removeViewBox: false
+						},
+						{
+							convertPathData: {
+								straightCurves: false
+							}
+						}
 					]
 				},
 				files: {
