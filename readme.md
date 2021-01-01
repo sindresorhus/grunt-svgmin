@@ -1,4 +1,4 @@
-# grunt-svgmin [![Build Status](https://travis-ci.org/sindresorhus/grunt-svgmin.svg?branch=master)](https://travis-ci.org/sindresorhus/grunt-svgmin)
+# grunt-svgmin
 
 > Minify SVG using [SVGO](https://github.com/svg/svgo)
 
