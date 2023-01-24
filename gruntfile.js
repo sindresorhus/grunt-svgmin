@@ -5,43 +5,43 @@ module.exports = grunt => {
 		svgmin: {
 			compile: {
 				files: {
-					'test/tmp/test.svg': 'test/fixtures/test.svg'
-				}
+					'test/tmp/test.svg': 'test/fixtures/test.svg',
+				},
 			},
 			withconfig: {
 				options: {
 					plugins: [
 						{
-							removeViewBox: false
+							name: 'preset-default',
+							params: {
+								overrides: {
+									removeViewBox: false,
+								},
+							},
 						},
-						{
-							convertPathData: {
-								straightCurves: false
-							}
-						}
-					]
+					],
 				},
 				files: {
-					'test/tmp/withconfig.svg': 'test/fixtures/test.svg'
-				}
+					'test/tmp/withconfig.svg': 'test/fixtures/test.svg',
+				},
 			},
 			multiple: {
 				files: [{
 					expand: true,
 					cwd: 'test/fixtures/',
 					src: ['**/*.svg'],
-					dest: 'test/tmp/'
-				}]
-			}
+					dest: 'test/tmp/',
+				}],
+			},
 		},
 		simplemocha: {
 			test: {
-				src: 'test/*.js'
-			}
+				src: 'test/*.js',
+			},
 		},
 		clean: {
-			test: ['test/tmp']
-		}
+			test: ['test/tmp'],
+		},
 	});
 
 	grunt.loadTasks('tasks');

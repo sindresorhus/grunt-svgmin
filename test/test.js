@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env mocha */
-const assert = require('assert');
-const fs = require('fs');
+const assert = require('node:assert');
+const fs = require('node:fs');
 
 it('minifies SVG', () => {
 	const original = fs.statSync('test/fixtures/test.svg').size;

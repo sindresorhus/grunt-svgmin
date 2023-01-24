@@ -4,13 +4,11 @@
 
 *Issues with the output should be reported on the SVGO [issue tracker](https://github.com/svg/svgo/issues).*
 
-
 ## Install
 
+```sh
+npm install --save-dev grunt-svgmin
 ```
-$ npm install --save-dev grunt-svgmin
-```
-
 
 ## Usage
 
@@ -22,16 +20,11 @@ grunt.initConfig({
 		options: {
 			plugins: [
 				{
-					removeViewBox: false
-				},
-				{
-					removeUselessStrokeAndFill: false
-				},
-				{
-					removeAttrs: {
-						attrs: [
-							'xmlns'
-						]
+					name: 'preset-default',
+					params: {
+						overrides: {
+							sortAttrs: false
+						}
 					}
 				}
 			]
@@ -47,45 +40,10 @@ grunt.initConfig({
 grunt.registerTask('default', ['svgmin']);
 ```
 
+### Options
 
-### Available Options/Plugins
-
-This module makes use of the standard SVGO plugin architecture. Therefore, to customize SVG optimization, you can disable/enable/configure any SVGO plugins listed at the [SVGO repository](https://github.com/svg/svgo/tree/master/plugins).
-
-To disable plugins with the gruntfile.js, look for the plugin name at the [SVGO repository](https://github.com/svg/svgo/tree/master/plugins) and copy the plugin name (minus the file extension). Then set its value in the JSON to `false` in comma-separated objects. To exemplify, here is how the plugins section in the example configuration (illustrated above) might be written with some of the standard SVGO plugins disabled:
-
-```js
-plugins: [
-	{removeViewBox: false},               // Don't remove the viewbox attribute from the SVG
-	{removeUselessStrokeAndFill: false},  // Don't remove Useless Strokes and Fills
-	{removeEmptyAttrs: false}             // Don't remove Empty Attributes from the SVG
-]
-```
-
-Check each plugin for `exports.active = [true/false]` to see if the plugin is enabled. Most of the plugins are enabled by default but you may want to prevent a couple, particularly `removeUselessStrokeAndFill` as that may remove small details with subtracted / extruded complex paths.
-
-To configure specific parameters for a plugin with the gruntfile.js, set its value in the JSON to a `params` object:
-
-```js
-plugins: [
-	{
-		removeAttrs: {
-			attrs: [
-				'xmlns'
-			]
-		}
-	}
-]
-```
-
-Check each plugin for `exports.params` to see if it has default parameters and what they are.
-
+The provided options are passed directly to [SVGO](https://github.com/svg/svgo#configuration).
 
 ## Note
 
 Per-file savings are only printed in verbose mode (`grunt svgmin --verbose`).
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
